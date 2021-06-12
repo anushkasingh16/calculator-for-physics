@@ -1,4 +1,4 @@
-from calc import find_inital_velocity, find_final_velocity, find_acc, find_displacement
+from motion import find_inital_velocity, find_final_velocity, find_acc, find_displacement, find_time_taken
 
 menu_control = 1
 
@@ -27,6 +27,6 @@ while menu_control > 0:
             find_acc()
             continue
         elif quantity_choice == 5:
-            
+            find_time_taken()
             continue
 
