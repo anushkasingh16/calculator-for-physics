@@ -26,8 +26,11 @@ def find_inital_velocity():
         second_var_choice = input('\nEnter D if you have displacement or T if you have time taken given to you: ')
         if second_var_choice == 'D':
              displacement = int(input('\nEnter displacement: '))
-            # result = math.pow(math.pow(final_velocity,2)-2*acceleration*displacement,0.5)
-            #HANDLE MATH DOMAIN WITH RESPECT TO NEGATIVE NUMBERS HERE
+             result = math.pow(final_velocity,2)-2*acceleration*displacement
+             if result < 0:
+                 result = 'ERROR'
+             else:
+                result = math.pow(math.pow(final_velocity,2)-2*acceleration*displacement,0.5)
         elif second_var_choice == 'T':
             time_taken = int(input('\nEnter time taken: '))
             result = final_velocity - acceleration*time_taken
@@ -40,7 +43,10 @@ def find_inital_velocity():
     else:
         print('\nIncorrect choice selected.')
     clear()
-    print('\nThe INITAL VELOCITY is : ',result)
+    if result != 'ERROR':
+        print('\nThe INITAL VELOCITY is : ',result)
+    else:
+         print('\nThe result is the root of a negative number, and thus cannot be calcualted.')
     
 menu_control = 1
 
